@@ -3,6 +3,15 @@ revision = 2
 requires-python = ">=3.9"
 
 [[package]]
+name = "comtypes"
+version = "1.4.11"
+source = { registry = "https://mirrors.aliyun.com/pypi/simple" }
+sdist = { url = "https://mirrors.aliyun.com/pypi/packages/3c/b9/4431119a640f568190499fd76fac4b4ccb5695659c4b3aac570329c150ea/comtypes-1.4.11.zip", hash = "sha256:0a4259370ec48b685fe4483b0944ba1df0aa45163922073fe9b7df1d187db09e" }
+wheels = [
+    { url = "https://mirrors.aliyun.com/pypi/packages/f1/f4/7b7fdbb613992013c4518a0bf8fee2915f79ec07bcfa6180569bca7fa8ef/comtypes-1.4.11-py3-none-any.whl", hash = "sha256:1760d5059ca7ca1d61b574c998378d879c271a86c41f88926619ea97497592bb" },
+]
+
+[[package]]
 name = "pywin32"
 version = "310"
 source = { registry = "https://mirrors.aliyun.com/pypi/simple" }
@@ -28,8 +37,12 @@ name = "sendto3dsmax"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "comtypes" },
     { name = "pywin32" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "pywin32", specifier = ">=310" }]
+requires-dist = [
+    { name = "comtypes", specifier = ">=1.4.11" },
+    { name = "pywin32", specifier = ">=310" },
+]

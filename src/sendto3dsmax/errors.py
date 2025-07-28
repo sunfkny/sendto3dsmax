@@ -1,18 +1,22 @@
-class BaseError(Exception):
+class UnsupportedFileTypeError(RuntimeError):
     pass
 
 
-class UnsupportedFileTypeError(BaseError):
+class MaxNotFoundError(RuntimeError):
     pass
 
 
-class MaxNotFoundError(BaseError):
+class ElementNotFoundError(RuntimeError):
     pass
 
 
-class MultipleinstancesError(BaseError):
+class EditBoxNotFoundError(ElementNotFoundError):
     pass
 
 
-class ListenerWindowNotFoundError(BaseError):
+class StatusPanelFoundError(ElementNotFoundError):
+    pass
+
+
+class MaxNotRespondingError(ElementNotFoundError):
     pass
